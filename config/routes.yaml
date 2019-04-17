@@ -1,0 +1,7 @@
+utilisateurs:
+    path: /
+    controller: App\Controller\UtilisateurController::utilisateurs
+
+login:
+    path: /login
+    controller: App\Controller\SecurityController::login
