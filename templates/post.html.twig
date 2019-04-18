@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% for key, article in articles %}
+    <div >
+        <div class="title"> {{ post.title }}</div>
+        <br>
+        <div class="content">{{ post.content }}</div>
+    </div>
+{% endfor %}

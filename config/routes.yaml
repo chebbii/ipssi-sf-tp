@@ -1,0 +1,21 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+
+
+
+article_edit:
+  path: /edit/{id}
+  controller: App\Controler\BlogController::edit
+  requirements:
+    id: '\d+'
+
+
+article_remove:
+  path: /remove/{id}
+  controller: App\Controler\BlogController::remove
+  requirements:
+    id: '\d+'
+
+
