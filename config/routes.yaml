@@ -1,6 +1,6 @@
-utilisateurs:
-    path: /
-    controller: App\Controller\UtilisateurController::utilisateurs
+utilisateur:
+    path: /utilisateur
+    controller: App\Controller\UtilisateurController::utilisateur
 
 login:
     path: /login
