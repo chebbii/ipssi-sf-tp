@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+utilisateur:
+    path: /utilisateur
+    controller: App\Controller\UtilisateurController::utilisateur
+
+login:
+    path: /login
+    controller: App\Controller\SecurityController::login
+=======
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
@@ -19,3 +28,4 @@ article_remove:
     id: '\d+'
 
 
+>>>>>>> ff7aa1bf1537e520f106bd50cb2dff20349b5b1a
