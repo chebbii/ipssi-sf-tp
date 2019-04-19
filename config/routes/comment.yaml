@@ -1,0 +1,3 @@
+form_comment:
+  path: /form
+  controller: App\Controller\CommentController::test

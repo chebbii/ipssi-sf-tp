@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 utilisateur:
     path: /utilisateur
     controller: App\Controller\UtilisateurController::utilisateur
@@ -5,3 +6,26 @@ utilisateur:
 login:
     path: /login
     controller: App\Controller\SecurityController::login
+=======
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+
+
+
+article_edit:
+  path: /edit/{id}
+  controller: App\Controler\BlogController::edit
+  requirements:
+    id: '\d+'
+
+
+article_remove:
+  path: /remove/{id}
+  controller: App\Controler\BlogController::remove
+  requirements:
+    id: '\d+'
+
+
+>>>>>>> ff7aa1bf1537e520f106bd50cb2dff20349b5b1a

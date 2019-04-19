@@ -1,4 +1,4 @@
-
+kaouther , aziza , ibrahim
 # Thème: 
 [![CircleCI](https://circleci.com/gh/alborq/ipssi-sf-tp.svg?style=svg)](https://circleci.com/gh/alborq/ipssi-sf-tp) 
 
@@ -33,7 +33,8 @@ Création d'une platform de pari eu ligne
   - Une zone de blog
 	  - Liste des articles paginé (10 par page)
 	  - Consultation d'un article.
-	  - Une zone de commentaire sous chaque article. (Nom de l'utilisateur, Date, message full text) 
+	  - Une zone de commentaire sous chaque article. Seul les utilisateurs connecter peuvent commenter.
+	  	(Nom de l'utilisateur, Date, message full text) 
 	  - Un administrateur peut censuré (et dé-censuré) un commentaire (Il n'est plus visible pour les utilisateur sauf admin qui a un indicateur) 
 	  - Un Flux RSS est mis a disposition. 
 
