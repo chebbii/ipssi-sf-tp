@@ -39,29 +39,35 @@ start: docker-compose.override.yml
 	$(FIG) pull || true
 	$(FIG) build
 	$(FIG) up -d
+	$(FIG) exec -u 1000:1000 app composer install
+	$(EXEC) $(CONSOLE) doctrine:database:create --if-not-exists
+	$(EXEC) $(CONSOLE) doctrine:schema:update --force
+	$(EXEC) $(CONSOLE) hautelook:fixtures:load -q
+.PHONY: dup ## restart the project
+dup:
+	$(FIG) stop
+	$(FIG) up -d
 
 .PHONY: stop ## stop the project
 stop:
-stop:
 	$(FIG) down
 
-.PHONY: cc ## Clear the cache in dev env
-cc: perm
-	$(EXECROOT) rm -rf var/cache/*
-	$(EXEC) $(CONSOLE) cache:clear --no-warmup
-	$(EXEC) $(CONSOLE) cache:warmup
+.PHONY: exe ## Run bash in the app container
+exe:
+	$(FIG) exec -u 1000:1000 app /bin/bash
 
-.PHONY: exec ## Run bash in the app container
-exec:
-	$(EXEC) /bin/bash
-	docker-compose exec -u 1000:1000 app bash
-.PHONY: tests ##lance les tests de l'application
+.PHONY: tests ## Lance les tests de l'applications
 tests:
-    vendor/bin/phpcs src
+	vendor/bin/phpcs src
+	vendor/bin/phpstan analyse --level 6 src
+
+.PHONY: tests-fix ## Fix le cs de mon app
+tests-fix:
+	vendor/bin/phpcbf src
 
 ##
 ## Dependencies Files
 ##---------------------------------------------------------------------------
 
 docker-compose.override.yml: docker-compose.override.yml.dist
-$(RUN) cp docker-compose.override.yml.dist docker-compose.override.yml
+    $(RUN) cp docker-compose.override.yml.dist docker-compose.override.yml

@@ -1,3 +1,7 @@
+article_add:
+  path: /add
+  controller: App\Controller\BlogController::add
+
 article_show:
   path: /
-  controller: App\Controller\PostController::index
+  controller: App\Controller\BlogController::show
